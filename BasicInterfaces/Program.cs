@@ -42,6 +42,18 @@ namespace BasicInterfaces
         {
             Document d = new Document("Test Document");
 
+            // Use the 'is' operator
+            if (d is IStorable)
+            {
+                d.Save();
+            }
+
+            // Use the 'as' operator
+            IStorable intStor = d as IStorable;
+            if (intStor != null)
+            {
+                d.Load();
+            }
 
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
