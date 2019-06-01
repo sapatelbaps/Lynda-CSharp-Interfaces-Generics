@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace BasicInterfaces
 {
-    class Program
+
+    class NetInterfaces
     {
-        static void Main(string[] args)
+        static void Start()
         {
-            // BasicInterfaceEx.Start();
-            // MultipleInterfaces.Start();
+            Document d = new Document("Test Document");
+
+
 
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
