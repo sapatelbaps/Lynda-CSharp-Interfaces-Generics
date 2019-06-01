@@ -27,6 +27,8 @@ namespace IntroGenerics
 
             #endregion
 
+            #region Delegates on list items.
+
             // Use Exists() and Find()
             // List will call delegate for all of list items/ which meets some condition.
             if (empList.Exists(HighPay))
@@ -43,6 +45,8 @@ namespace IntroGenerics
             // Use ForEach to iterate over each item
             empList.ForEach(TotalSalaries);
             Console.WriteLine("Total payroll is: {0}\n", total);
+
+            #endregion
 
             // Sort the list using a custom class
             // that implements the IComparer interface
