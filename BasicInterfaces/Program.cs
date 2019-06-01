@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BasicInterfaces
 {
-    class Document
+    class Document : IStorable
     {
         private string name;
 
@@ -15,6 +15,25 @@ namespace BasicInterfaces
             name = s;
             Console.WriteLine("Created a document with name '{0}'", s);
         }
+
+        private Boolean mNeedsSave = false;
+
+        public void Save()
+        {
+            Console.WriteLine("Saving the document");
+        }
+
+        public void Load()
+        {
+            Console.WriteLine("Loading the document");
+        }
+
+        public Boolean NeedsSave
+        {
+            get { return mNeedsSave; }
+            set { mNeedsSave = value; }
+        }
+
     }
 
     class Program
@@ -28,4 +47,12 @@ namespace BasicInterfaces
             Console.ReadLine();
         }
     }
+
+    interface IStorable
+    {
+        void Save();
+        void Load();
+        Boolean NeedsSave { get; set; }
+    }
+
 }
