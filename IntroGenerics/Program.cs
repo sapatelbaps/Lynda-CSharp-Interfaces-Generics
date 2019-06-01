@@ -6,7 +6,8 @@ namespace IntroGenerics
     {
         static void Main(string[] args)
         {
-            xArrayList.Start();
+            // xArrayList.Start();
+            ExploreGenericColl.Start();
         }
     }
 }
