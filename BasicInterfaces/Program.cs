@@ -75,7 +75,7 @@ namespace BasicInterfaces
 
             #endregion
 
-
+            #region Call same method for casting multiple interfaces. Remove implementation of two methods from the FooBar class to review the difference in result.
 
             FooBar fb = new FooBar();
             fb.SomeMethod();
@@ -86,6 +86,7 @@ namespace BasicInterfaces
             IBar ibar = fb as IBar;
             ibar.SomeMethod();
 
+            #endregion
 
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
@@ -119,6 +120,16 @@ namespace BasicInterfaces
         public void SomeMethod()
         {
             Console.WriteLine("This is the class SomeMethod");
+        }
+
+        void IFoo.SomeMethod()
+        {
+            Console.WriteLine("This is IFoo's SomeMethod");
+        }
+
+        void IBar.SomeMethod()
+        {
+            Console.WriteLine("This is IBar's SomeMethod");
         }
     }
 
