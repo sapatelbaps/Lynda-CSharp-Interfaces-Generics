@@ -52,6 +52,8 @@ namespace BasicInterfaces
         {
             Document d = new Document("Test Document");
 
+            #region is/as operators and multiple interfaces implementation.
+
             // Use the 'is' operator
             if (d is IStorable)
             {
@@ -71,6 +73,20 @@ namespace BasicInterfaces
             d.Decrypt();
             d.NeedsSave = false;
 
+            #endregion
+
+
+
+            FooBar fb = new FooBar();
+            fb.SomeMethod();
+
+            IFoo ifoo = fb as IFoo;
+            ifoo.SomeMethod();
+
+            IBar ibar = fb as IBar;
+            ibar.SomeMethod();
+
+
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
         }
@@ -87,6 +103,23 @@ namespace BasicInterfaces
     {
         void Encrypt();
         void Decrypt();
+    }
+
+    interface IFoo
+    {
+        void SomeMethod();
+    }
+    interface IBar
+    {
+        void SomeMethod();
+    }
+
+    class FooBar : IFoo, IBar
+    {
+        public void SomeMethod()
+        {
+            Console.WriteLine("This is the class SomeMethod");
+        }
     }
 
 }
