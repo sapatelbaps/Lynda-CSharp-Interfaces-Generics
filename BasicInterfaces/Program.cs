@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BasicInterfaces
+﻿namespace BasicInterfaces
 {
     class Program
     {
@@ -13,6 +7,7 @@ namespace BasicInterfaces
             // BasicInterfaceEx.Start();
             // MultipleInterfaces.Start();
             // NetInterfaces.Start();
+            RandomNumGenerator.Start();
 
         }
     }
