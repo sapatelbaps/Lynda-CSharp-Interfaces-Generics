@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,10 +45,29 @@ namespace BasicInterfaces
     {
         private string name;
 
+        // INotifyPropertyChanged requires the implementation of 1 event
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // Utility function to call the PropertyChanged event
+        private void NotifyPropChanged(string propName)
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
+
         public Document(string s)
         {
             name = s;
             Console.WriteLine("Created a document with name '{0}'", s);
+        }
+
+        public string DocName
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                NotifyPropChanged("DocName");
+            }
         }
 
         private Boolean mNeedsSave = false;
@@ -65,7 +85,11 @@ namespace BasicInterfaces
         public Boolean NeedsSave
         {
             get { return mNeedsSave; }
-            set { mNeedsSave = value; }
+            set
+            {
+                mNeedsSave = value;
+                NotifyPropChanged("NeedsSave");
+            }
         }
 
         public void Encrypt()

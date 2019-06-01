@@ -12,9 +12,8 @@ namespace BasicInterfaces
         {
             // BasicInterfaceEx.Start();
             // MultipleInterfaces.Start();
+            // NetInterfaces.Start();
 
-            Console.WriteLine("\nPress Enter to continue...");
-            Console.ReadLine();
         }
     }
 
