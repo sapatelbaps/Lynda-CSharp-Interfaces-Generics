@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace BasicInterfaces
 {
+    class Document
+    {
+        private string name;
 
+        public Document(string s)
+        {
+            name = s;
+            Console.WriteLine("Created a document with name '{0}'", s);
+        }
+    }
 
     class Program
     {
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
             Document d = new Document("Test Document");
 
 
