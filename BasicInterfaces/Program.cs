@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BasicInterfaces
 {
-    class Document : IStorable
+    class Document : IStorable, IEncryptable
     {
         private string name;
 
@@ -34,6 +34,16 @@ namespace BasicInterfaces
             set { mNeedsSave = value; }
         }
 
+        public void Encrypt()
+        {
+            Console.WriteLine("Encrypting the document");
+        }
+
+        public void Decrypt()
+        {
+            Console.WriteLine("Decrypting the document");
+        }
+
     }
 
     class Program
@@ -55,6 +65,12 @@ namespace BasicInterfaces
                 d.Load();
             }
 
+            d.Load();
+            d.Encrypt();
+            d.Save();
+            d.Decrypt();
+            d.NeedsSave = false;
+
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
         }
@@ -65,6 +81,12 @@ namespace BasicInterfaces
         void Save();
         void Load();
         Boolean NeedsSave { get; set; }
+    }
+
+    interface IEncryptable
+    {
+        void Encrypt();
+        void Decrypt();
     }
 
 }
