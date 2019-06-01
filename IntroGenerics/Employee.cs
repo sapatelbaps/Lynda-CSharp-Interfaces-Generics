@@ -44,6 +44,15 @@ namespace IntroGenerics
             empList.ForEach(TotalSalaries);
             Console.WriteLine("Total payroll is: {0}\n", total);
 
+            // Sort the list using a custom class
+            // that implements the IComparer interface
+            EmployeeComparer ec = new EmployeeComparer();
+            empList.Sort(ec);
+            foreach (Employee emp in empList)
+            {
+                Console.WriteLine("Salary for {0} is {1}", emp.mName, emp.mSalary);
+            }
+
         }
 
         // delegate function to use for the Exists method
@@ -72,4 +81,18 @@ namespace IntroGenerics
             mSalary = salary;
         }
     }
+
+    class EmployeeComparer : IComparer<Employee>
+    {
+        public int Compare(Employee x, Employee y)
+        {
+            if (x.mSalary > y.mSalary)
+                return 1;
+            if (x.mSalary == y.mSalary)
+                return 0;
+            else
+                return -1;
+        }
+    }
+
 }
