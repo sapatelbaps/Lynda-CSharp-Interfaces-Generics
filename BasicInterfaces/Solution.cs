@@ -4,7 +4,7 @@ namespace BasicInterfaces
 {
     class Solution : IxRandomizable
     {
-        public static void Stat()
+        public static void Start()
         {
             string input;
             do

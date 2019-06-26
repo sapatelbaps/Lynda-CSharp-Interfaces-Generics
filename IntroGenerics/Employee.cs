@@ -8,6 +8,8 @@ namespace IntroGenerics
 {
     public class ExploreGenericColl
     {
+        static int total = 0;
+
         public static void Start()
         {
             // Create a new empty List for Employee objects 
@@ -66,7 +68,6 @@ namespace IntroGenerics
         }
 
         // Iterator function for the ForEach method
-        static int total = 0;
         static void TotalSalaries(Employee e)
         {
             total += e.mSalary;

@@ -8,7 +8,7 @@
             // MultipleInterfaces.Start();
             // NetInterfaces.Start();
             // RandomNumGenerator.Start();
-            Solution.Stat();
+            Solution.Start();
         }
     }
 
